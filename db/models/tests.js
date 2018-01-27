@@ -3,7 +3,7 @@ const Op = Sequelize.Op;
 const db = require('../db');
 
 const Test = db.define('test', {
-  title: {
+  subject: {
     type: Sequelize.STRING,
     allowNull: false,
     },
@@ -23,7 +23,7 @@ Test.passing = function() {
   })
 }
 
-Test.findByType = function(type){
+Test.findBySubject = function(type){
   return Test.findAll({
     where: {
       type: type

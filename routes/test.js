@@ -4,7 +4,7 @@ const Student = require('../db/models').Student
 
 router.get('/passing', function (req, res, next) {
   Test.passing()
-  .then(tests => res.status(201).json(tests))
+  .then(tests => res.status(200).json(tests))
   .catch(next)
 })
 
@@ -16,7 +16,17 @@ router.get('/', function (req, res, next) {
 
 router.get('/:id', function (req, res, next) {
   Test.findById(req.params.id)
-  .then(test => res.send(201).json(test))
+  .then(test => res.status(200).json(test))
+  .catch(next)
+})
+
+router.get('/subject/:subject', function (req, res, next) {
+  Test.findAll({
+    where: {
+      subject: req.params.subject
+    }
+  })
+  .then(test => res.status(200).json(test))
   .catch(next)
 })
 
@@ -24,7 +34,7 @@ router.post('/', function(req, res, next) {
   let studentInstance;
   Student.findOne({
     where: {
-      lastName: req.body.lastName
+      id: req.body.studentId
     }
   })
   .then(student => {
@@ -33,6 +43,7 @@ router.post('/', function(req, res, next) {
   })
   .then(test => {
     test.setStudent(studentInstance)
+    res.status(201).json(test)
   })
   .catch(next)
 })
@@ -43,7 +54,7 @@ router.delete('/:id', function (req, res, next) {
       id: req.params.id
     }
   })
-  .then(() => res.sendStatus(201))
+  .then(() => res.send('deleted!'))
   .catch(next)
 })
 

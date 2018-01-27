@@ -1,7 +1,8 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
-const Routes = require('./routes')
+const Student = require('./routes/student')
+const Test = require('./routes/test')
 const morgan = require('morgan')
 const db = require('./db/db')
 
@@ -10,7 +11,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(morgan('dev'));
 
-app.use('/', Routes)
+app.use('/student', Student)
+app.use('/test', Test)
 
 app.use(function(err, req, res, next) {
   console.error(err.stack);
