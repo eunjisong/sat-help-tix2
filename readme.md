@@ -38,11 +38,52 @@ List of requirements
 Express - Using models and routes
 Defining Models
 
-//
+_______
+
+Student Model:
+First Name
+-String
+-Do not allow Null value
+Last Name
+-String
+-Do not allow Null value
+Email
+-String
+-Do not allow Null value
+-Validate data is in fact email
+Hook
+-Before validate, capitalize first letter in first name and last name values
+
+Instance Methods:
+getTests
+-Finds all tests associated with particular student
+getInitials
+-Returns students initials
+
+_______
+
+Test Model:
+subject
+-String
+-Do not allow Null value
+grade
+-String
+-Do not allow Null value
+
+Class Methods:
+passing
+-Returns all tests with grade above 70
+findByType
+-Returns all tests for a particular subject
+
+_______
 
 Student Routes:
+-Get all students, send back instance of students along with status of 200
+-Get all tests associate with a particular student (uses student id), set status of 200
+-Post a new student - send back instance of new student along with status of 201
+-update a student
+-delete student
+_______
 
-Get all students
-Get all tests associate with a particular student (uses student id)
-Post a new stduent
-update a student
+Test Routes

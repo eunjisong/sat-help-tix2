@@ -5,7 +5,7 @@ const Test = require('../db/models').Test
 router.get('/:studentId', function (req, res, next) {
   Student.findById(req.params.studentId)
   .then(student => student.getTests())
-  .then(test => res.status(201).json(test))
+  .then(test => res.status(200).json(test))
   .catch(next)
 })
 
