@@ -38,3 +38,11 @@ List of requirements
 Express - Using models and routes
 Defining Models
 
+//
+
+Student Routes:
+
+Get all students
+Get all tests associate with a particular student (uses student id)
+Post a new stduent
+update a student

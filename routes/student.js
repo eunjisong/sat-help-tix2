@@ -2,6 +2,13 @@ const router = require('express').Router()
 const Student = require('../db/models').Student
 const Test = require('../db/models').Test
 
+router.get('/:studentId', function (req, res, next) {
+  Student.findById(req.params.studentId)
+  .then(student => student.getTests())
+  .then(test => res.status(201).json(test))
+  .catch(next)
+})
+
 router.get('/', function(req, res ,next) {
   Student.findAll()
   .then(students => res.status(200).json(students))
@@ -10,13 +17,6 @@ router.get('/', function(req, res ,next) {
 router.post('/', function(req, res, next) {
   Student.create(req.body)
   .then(student => res.status(201).json(student))
-  .catch(next)
-})
-
-router.get('/:studentId', function (req, res, next) {
-  Student.findById(req.params.studentId)
-  .then(student => student.getTestScore())
-  .then(test => res.status(201).json(test))
   .catch(next)
 })
 
