@@ -20,6 +20,16 @@ router.get('/:id', function (req, res, next) {
   .catch(next)
 })
 
+router.get('/subject/:subject', function (req, res, next) {
+  Test.findAll({
+    where: {
+      subject: req.params.subject
+    }
+  })
+  .then(test => res.status(200).json(test))
+  .catch(next)
+})
+
 router.post('/', function(req, res, next) {
   let studentInstance;
   Student.findOne({
