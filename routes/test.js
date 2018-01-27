@@ -30,11 +30,11 @@ router.get('/subject/:subject', function (req, res, next) {
   .catch(next)
 })
 
-router.post('/', function(req, res, next) {
+router.post('/:studentId', function(req, res, next) {
   let studentInstance;
   Student.findOne({
     where: {
-      id: req.body.studentId
+      id: req.params.studentId
     }
   })
   .then(student => {
