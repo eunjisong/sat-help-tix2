@@ -86,4 +86,9 @@ Student Routes:
 -delete student
 _______
 
-Test Routes
+Test Routes:
+-Get all tests, send back instance of students along with status of 200
+-Get all tests with passing grades, send back status 200 along with instances of passing tests
+-Get test by id, set status as 201 and return instance of test
+-Post a new test, use route indicating the id of the student that took the test, create new test and associate / place the studentId on the table with the tst
+-Delete test

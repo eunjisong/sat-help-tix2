@@ -4,7 +4,7 @@ const Student = require('../db/models').Student
 
 router.get('/passing', function (req, res, next) {
   Test.passing()
-  .then(tests => res.status(201).json(tests))
+  .then(tests => res.status(200).json(tests))
   .catch(next)
 })
 
@@ -20,11 +20,11 @@ router.get('/:id', function (req, res, next) {
   .catch(next)
 })
 
-router.post('/', function(req, res, next) {
+router.post('/:id', function(req, res, next) {
   let studentInstance;
   Student.findOne({
     where: {
-      lastName: req.body.lastName
+      id: req.params.id
     }
   })
   .then(student => {
