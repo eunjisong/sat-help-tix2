@@ -36,7 +36,7 @@ router.delete('/:id', function (req, res, next) {
       id: req.params.id
     }
   })
-  .then(() => res.sendStatus(201))
+  .then((result) => res.json(result))
   .catch(next)
 })
 

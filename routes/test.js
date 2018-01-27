@@ -16,15 +16,15 @@ router.get('/', function (req, res, next) {
 
 router.get('/:id', function (req, res, next) {
   Test.findById(req.params.id)
-  .then(test => res.send(201).json(test))
+  .then(test => res.status(200).json(test))
   .catch(next)
 })
 
-router.post('/:id', function(req, res, next) {
+router.post('/', function(req, res, next) {
   let studentInstance;
   Student.findOne({
     where: {
-      id: req.params.id
+      id: req.body.studentId
     }
   })
   .then(student => {
@@ -33,6 +33,7 @@ router.post('/:id', function(req, res, next) {
   })
   .then(test => {
     test.setStudent(studentInstance)
+    res.status(201).json(test)
   })
   .catch(next)
 })
@@ -43,7 +44,7 @@ router.delete('/:id', function (req, res, next) {
       id: req.params.id
     }
   })
-  .then(() => res.sendStatus(201))
+  .then(() => res.send('deleted!'))
   .catch(next)
 })
 

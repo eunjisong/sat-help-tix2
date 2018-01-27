@@ -79,16 +79,16 @@ findByType
 _______
 
 Student Routes:
--Get all students, send back instance of students along with status of 200
+W-Get all students, send back instance of students along with status of 200
 -Get all tests associate with a particular student (uses student id), set status of 200
--Post a new student - send back instance of new student along with status of 201
--update a student
--delete student
+W-Post a new student - send back instance of new student along with status of 201
+W-update a student
+W-delete student,
 _______
 
 Test Routes:
--Get all tests, send back instance of students along with status of 200
--Get all tests with passing grades, send back status 200 along with instances of passing tests
--Get test by id, set status as 201 and return instance of test
--Post a new test, use route indicating the id of the student that took the test, create new test and associate / place the studentId on the table with the tst
+W-Get all tests, send back instance of students along with status of 200
+W-Get all tests with passing grades, send back status 200 along with instances of passing tests
+W-Get test by id, set status as 201 and return instance of test
+W-Post a new test, use route indicating the id of the student that took the test, create new test and associate / place the studentId on the table with the tst
 -Delete test

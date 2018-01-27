@@ -3,7 +3,7 @@ const Op = Sequelize.Op;
 const db = require('../db');
 
 const Test = db.define('test', {
-  Subject: {
+  subject: {
     type: Sequelize.STRING,
     allowNull: false,
     },
