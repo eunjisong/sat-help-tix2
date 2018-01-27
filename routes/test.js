@@ -1,6 +1,6 @@
 const router = require('express').Router()
-const Test = require('../db/models').Test
-const Student = require('../db/models').Student
+const Test = require('../db/models/tests');
+const Student = require('../db/models/students');
 
 router.get('/passing', function (req, res, next) {
   Test.passing()

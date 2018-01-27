@@ -1,9 +1,9 @@
-const Test = require('./tests')
-const Student = require('./students')
+// const Test = require('./tests')
+// const Student = require('./students')
 
-Test.belongsTo(Student)
+// Test.belongsTo(Student)
 
-module.exports = {
-  Test,
-  Student
-}
+// module.exports = {
+//   Test,
+//   Student
+// }

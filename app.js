@@ -7,6 +7,7 @@ const morgan = require('morgan')
 const db = require('./db/db')
 
 app.use(bodyParser.json());
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(morgan('dev'));

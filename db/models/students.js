@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
-const Test = require('./tests')
+// const Test = require('./tests')
 
 const Student = db.define('student', {
   firstName: {
@@ -33,17 +33,19 @@ const Student = db.define('student', {
   }
 });
 
-Student.prototype.getTests = function(){
-  return Test.findAll({
-    where: {
-      studentId: this.id
-    }
-  })
-}
+// Student.prototype.getTests = function(){
+//   return Test.findAll({
+//     where: {
+//       studentId: this.id
+//     }
+//   })
+// }
 
 Student.prototype.initials = function () {
   return `${this.firstName[0]} ${this.lastName[0]}`;
 }
+
+// Test.belongsTo(Student)
 
 module.exports = Student;
 
