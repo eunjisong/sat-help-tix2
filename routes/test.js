@@ -1,6 +1,6 @@
 const router = require('express').Router()
-const Test = require('../db/models').Test
-const Student = require('../db/models').Student
+const Test = require('../db/models/tests');
+const Student = require('../db/models/students');
 
 router.get('/passing', function (req, res, next) {
   Test.passing()
@@ -30,11 +30,11 @@ router.get('/subject/:subject', function (req, res, next) {
   .catch(next)
 })
 
-router.post('/', function(req, res, next) {
+router.post('/:studentId', function(req, res, next) {
   let studentInstance;
   Student.findOne({
     where: {
-      id: req.body.studentId
+      id: req.params.studentId
     }
   })
   .then(student => {

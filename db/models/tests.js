@@ -1,6 +1,8 @@
+'use strict'
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const db = require('../db');
+const Student = require('./students')
 
 const Test = db.define('test', {
   subject: {
@@ -31,4 +33,6 @@ Test.findBySubject = function(type){
   })
 }
 
-module.exports = Test;
+Test.belongsTo(Student)
+
+module.exports = Test

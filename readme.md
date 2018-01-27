@@ -56,8 +56,6 @@ _______
 
 Student Routes:
 W-Get all students, send back instance of students along with status of 200
-W-Get all tests associate with a particular student (uses student id), set status of 200
-W-Post a new student - send back instance of new student along with status of 201
 W-update a student
 W-delete student,
 _______
