@@ -3,10 +3,6 @@
 const Promise = require('bluebird');
 const chai = require('chai');
 const expect = chai.expect;
-const should = chai.should();
-const sinon = require('sinon');
-const sinonChai = require('sinon-chai');
-chai.use(sinonChai);
 
 const Students = require('../db/models/students');
 const Tests = require('../db/models/tests');
