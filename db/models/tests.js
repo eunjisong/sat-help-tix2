@@ -28,7 +28,7 @@ Test.passing = function() {
 Test.findBySubject = function(type){
   return Test.findAll({
     where: {
-      type: type
+      subject: type
     }
   })
 }

@@ -1,11 +1,9 @@
 'use strict';
 
-const Promise = require('bluebird');
 const chai = require('chai');
 const expect = chai.expect;
 
 const Students = require('../db/models/students');
-const Tests = require('../db/models/tests');
 const db = require('../db/db');
 
 describe('The `Students` model', function() {
@@ -30,10 +28,7 @@ describe('The `Students` model', function() {
   //cascade:true `Only used in conjunction with TRUNCATE. Truncates all tables that have foreign-key references to the named table, or to any tables added to the group due to CASCADE`.
   //src: http://docs.sequelizejs.com/class/lib/model.js~Model.html#static-method-truncate
   afterEach(() => {
-    return Promise.all([
-      Students.truncate({ cascade: true }),
-      Tests.truncate({ cascade: true })
-    ]);
+    Students.truncate({ cascade: true });
   });
 
   describe('attributes definition', () => {
