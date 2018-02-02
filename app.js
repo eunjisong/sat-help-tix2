@@ -5,6 +5,7 @@ const Student = require('./routes/student')
 const Test = require('./routes/test')
 const morgan = require('morgan')
 const db = require('./db/db')
+const path = require('path');
 
 app.use(bodyParser.json());
 
@@ -14,6 +15,8 @@ app.use(morgan('dev'));
 
 app.use('/student', Student)
 app.use('/test', Test)
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(function(err, req, res, next) {
   console.error(err.stack);

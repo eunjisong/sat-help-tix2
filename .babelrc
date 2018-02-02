@@ -1,0 +1,17 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "last 2 versions"
+          ] // Support the last two versions of all major browsers,
+          // building shims for newer features where needed.
+        }
+      }
+    ],
+    "react",    // Compile <Foo bar={2}> into React.createElement(Foo, {bar: 2})
+    "stage-2"   // Gives us object spread {...props} and class fields
+  ]
+}
