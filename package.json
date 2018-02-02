@@ -7,11 +7,14 @@
     "test": "nodemon --exec 'mocha --reporter spec --timeout 1000 test/*.test.js || true'",
     "start": "concurrently --names build,serve 'npm run build-watch' 'nodemon app.js'",
     "build": "webpack",
-    "build-watch": "webpack -w"
+    "build-watch": "webpack -w",
+    "prepare": "npm run seed",
+    "seed": "node db/seed"
   },
   "author": "myself",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.17.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
@@ -28,6 +31,7 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "chai": "^4.1.2",
+    "faker": "^4.1.0",        
     "mocha": "^5.0.0",
     "sinon": "^4.2.2",
     "sinon-chai": "^2.14.0",
