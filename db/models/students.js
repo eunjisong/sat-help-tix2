@@ -38,3 +38,8 @@ Student.prototype.initials = function () {
 
 module.exports = Student;
 
+const Test = require('./tests')
+Student.hasMany(Test)
+
+
+
