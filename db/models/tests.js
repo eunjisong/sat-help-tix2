@@ -2,7 +2,6 @@
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const db = require('../db');
-const Student = require('./students')
 
 const Test = db.define('test', {
   subject: {
@@ -33,6 +32,7 @@ Test.findBySubject = function(type){
   })
 }
 
-Test.belongsTo(Student)
-
 module.exports = Test
+
+const Student = require('./students')
+Test.belongsTo(Student)

@@ -14,7 +14,7 @@ const SUBJECTS = [
 ]
 
 async function seed() {
-    await db.sync({ force: true })
+    await db.sync({force: true})
     const students = await seedStudents()
     console.log(students.map(_ => _.fullName))
     console.log('Seeded', students.length, 'students.')

@@ -7,8 +7,8 @@ router.get('/:studentId', function (req, res, next) {
   .catch(next)
 })
 
-router.get('/', function(req, res ,next) {
-  Student.findAll()
+router.get('/', function(req, res, next) {
+  Student.findAll({include: {all: true}})
   .then(students => res.status(200).json(students))
 })
 
