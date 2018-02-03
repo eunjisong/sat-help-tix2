@@ -13,7 +13,7 @@ export default class Main extends Component {
         }
     }
 
-    componentDidMount(){//is called after the initial render
+    componentDidMount(){//state is always set initiall and this calls it again after the initial render
         this.getStudents()
     }
 
@@ -30,8 +30,8 @@ export default class Main extends Component {
         console.log('!!!!!!', this.state)
         return (
             <div>
-                <h1>Hello Students!</h1>
-                <Students asc={true} students={this.state.students} />
+                <h1>Hello Teachers!</h1>
+                <Students students={this.state.students} />
             </div>
         )
     }

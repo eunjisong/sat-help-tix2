@@ -1,41 +1,16 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-
-const Student = ({fullName, tests}) =>
-    <div>
-      <h3>{fullName}</h3>
-      <div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>subject</th>
-                        <th>grade</th>
-                    </tr>
-                </thead>
-            <tbody>
-                {
-                    tests.map((test) => 
-                        <tr key={test.id}>
-                            <td>{test.subject}</td>
-                            <td>{test.grade}%</td>
-                        </tr>
-                    )
-                }
-                </tbody>
-            </table>
-        </div>
-    </div>
+import SingleStudent from './SingleStudent';
 
 const Students = (props) => {
     console.log(props)
         return (
             <div>
-                <h2>Here are the students</h2>
+                <h2>GradeBook:</h2>
                 {
-                    props.students
+                    props.students//an array of the students
                         .map(student =>
                             (
-                                <Student
+                                <SingleStudent
                                     key={student.id}
                                     /* fullName={student.fullName}
                                     tests={student.tests} */
