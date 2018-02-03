@@ -13,28 +13,25 @@ export default class Main extends Component {
         }
     }
 
-    componentDidMount(){
+    componentDidMount(){//is called after the initial render
         this.getStudents()
     }
 
 
     getStudents() {
         axios.get(`/student`)
-            .then(res => {
-                this.setState({
-                    students: res.data
-            })})
+            .then(res => this.setState({students: res.data}))
             .catch(console.error)
     }
 
 
     render() {
         if (!this.state) return 'loading...'
-        console.log(this.state)
+        console.log('!!!!!!', this.state)
         return (
             <div>
                 <h1>Hello Students!</h1>
-                <Students asc={false} students={this.state.students} />
+                <Students asc={true} students={this.state.students} />
             </div>
         )
     }
