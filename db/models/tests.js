@@ -37,4 +37,3 @@ module.exports = Test
 
 const Student = require('./students')
 Test.belongsTo(Student)
-

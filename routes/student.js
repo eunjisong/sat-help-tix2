@@ -13,6 +13,7 @@ router.get('/:studentId', function (req, res, next) {
 })
 
 router.post('/', function(req, res, next) {
+  console.log('made it to the post route!!!!')
   Student.create(req.body)
   .then(student => res.status(201).json(student))
   .catch(next)
