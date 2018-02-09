@@ -25,7 +25,7 @@ export default class SingleStudent extends Component {
     return (
       <div>
         <h3>{fullName}</h3>
-        {(!tests || (Array.isArray(tests) && !tests.length))? null : <button onClick={this.showGradesList}>Grades</button>}
+        {this.avgGrade(tests) ? <button onClick={this.showGradesList}>Grades</button> : null}
 
         {this.avgGrade(tests) ? (
           <h3>Average Grade: {this.avgGrade(tests)}%</h3>
