@@ -18,7 +18,6 @@ const SingleStudent = ({fullName, tests}) =>
                     <tr>
                         <th>Subject</th>
                         <th>Grade</th>
-                        <th>Average</th>
                     </tr>
                 </thead>
                 <tbody>
