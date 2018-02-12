@@ -23,4 +23,6 @@ const Students = (props) => {
     )
 }
 
+// rendering the list of students 
+
 export default Students
